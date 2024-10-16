@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import PrivateRoute from "./route/PrivateRoute";
+// import PrivateRoute from "./route/PrivateRoute";
 import ProductList from "./components/products/ProductList";
 import Profile from "./components/profile/Profile";
 import AboutUs from "./components/about/AboutUs";
@@ -63,14 +63,14 @@ function App() {
             <Route
               path="/"
               element={
-                <PrivateRoute>
+                // <PrivateRoute>
                   <ProductList
                     searchTerm={searchTerm}
                     addToCart={addToCart}
                     toggleFavorite={toggleFavorite}
                     favorites={favorites}
                   />
-                </PrivateRoute>
+                // </PrivateRoute>
               }
             />
             <Route path="/profile" element={<Profile />} />

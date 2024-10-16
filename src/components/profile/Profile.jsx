@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../../context/themeContext";
 
 export default function Profile() {
-  const { theme } = useTheme
+  const { theme } = useTheme();
   const [user, setUser] = useState();
   const getUserData = async () => {
     const token = localStorage.getItem("token");
@@ -49,8 +49,8 @@ export default function Profile() {
             alt="User avatar"
           />
           <div>
-            <h2 className="text-2xl font-bold">{user?.name}</h2>
-            <p className="text-gray-600">{user?.email}</p>
+            <h2 className="text-2xl font-bold">{user?.name || "user"}</h2>
+            <p className="text-gray-600">{user?.email || "user@gmail.com"}</p>
           </div>
         </div>
         <div className="border-t pt-4">
