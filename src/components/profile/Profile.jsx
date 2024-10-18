@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../../context/themeContext";
 import API_BASE_URL from "../../../config";
 
+
 export default function Profile() {
   const { theme } = useTheme();
   const [user, setUser] = useState();
