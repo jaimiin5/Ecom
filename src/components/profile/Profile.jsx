@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "../../context/themeContext";
+import API_BASE_URL from "../../../config";
 
 export default function Profile() {
   const { theme } = useTheme();
@@ -7,7 +8,7 @@ export default function Profile() {
   const getUserData = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:5000/api/users/me", {
+    const res = await fetch(`${API_BASE_URL}/api/users/me`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

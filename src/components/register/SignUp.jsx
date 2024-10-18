@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "../../context/themeContext";
+import API_BASE_URL from "../../../config";
 
 export default function SignUp() {
   const { theme } = useTheme();
@@ -22,7 +23,7 @@ export default function SignUp() {
     e.preventDefault();
 
     const saveUser = async () => {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

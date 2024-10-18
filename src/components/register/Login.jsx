@@ -2,10 +2,11 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "../../context/themeContext";
+import API_BASE_URL from "../../../config";
 
 export default function Login() {
   const { theme } = useTheme();
-  console.log(theme)
+  console.log(theme);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -20,7 +21,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const userLogged = async () => {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
